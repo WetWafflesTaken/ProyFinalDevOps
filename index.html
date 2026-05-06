@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a0a00" />
+  <meta name="description" content="Las auténticas recetas de Don Eladio — sabor de rancho, tradición mexicana." />
+  <title>Recetas Don Eladio</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader" class="loader">
+    <div class="loader-pot">🫕</div>
+    <p>Calentando la cocina…</p>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-bg"></div>
+    <div class="header-content">
+      <span class="header-tag">✦ Desde el rancho con amor ✦</span>
+      <h1 class="site-title">Recetas<br><em>Don Eladio</em></h1>
+      <p class="site-sub">Cocina tradicional mexicana</p>
+    </div>
+    <nav class="main-nav">
+      <button class="nav-btn active" data-cat="todas">Todas</button>
+      <button class="nav-btn" data-cat="carnes">Carnes</button>
+      <button class="nav-btn" data-cat="aves">Aves</button>
+      <button class="nav-btn" data-cat="salsas">Salsas</button>
+    </nav>
+  </header>
+
+  <!-- SEARCH -->
+  <div class="search-bar">
+    <input type="search" id="searchInput" placeholder="Buscar receta…" />
+    <span class="search-icon">🔍</span>
+  </div>
+
+  <!-- RECIPE GRID -->
+  <main class="recipe-grid" id="recipeGrid"></main>
+
+  <!-- RECIPE MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <article class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-img-wrap">
+        <span class="modal-emoji" id="modalEmoji"></span>
+      </div>
+      <div class="modal-body">
+        <span class="modal-cat" id="modalCat"></span>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="modal-meta">
+          <span id="modalTime">⏱ —</span>
+          <span id="modalServings">🍽 —</span>
+          <span id="modalDiff">⭐ —</span>
+        </div>
+        <h3>Ingredientes</h3>
+        <ul class="modal-ingredients" id="modalIngredients"></ul>
+        <h3>Preparación</h3>
+        <ol class="modal-steps" id="modalSteps"></ol>
+        <button class="fav-btn" id="favBtn">♡ Guardar favorita</button>
+      </div>
+    </article>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- FAB FAVORITES -->
+  <button class="fab" id="fabFav" title="Mis favoritas">❤️
+    <span class="fab-badge" id="fabBadge">0</span>
+  </button>
+
+  <!-- FAVORITES PANEL -->
+  <aside class="fav-panel" id="favPanel">
+    <div class="fav-panel-head">
+      <h3>Mis Favoritas</h3>
+      <button id="favPanelClose">✕</button>
+    </div>
+    <ul id="favList"></ul>
+  </aside>
+
+  <!-- OFFLINE BANNER -->
+  <div class="offline-banner" id="offlineBanner">
+    📵 Sin conexión — mostrando recetas guardadas
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 Recetas Don Eladio · Hecho con <span style="color:#e74c3c">♥</span> en México</p>
+    <p class="pwa-install" id="installPrompt" style="display:none">
+      <button id="installBtn">📲 Instalar App</button>
+    </p>
+  </footer>
+
+  <script src="recipes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
