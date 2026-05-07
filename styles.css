@@ -488,6 +488,22 @@ body {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
+#recipeForm input, #recipeForm textarea, #recipeForm select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+}
+
+#recipeForm textarea {
+  height: 100px;
+  resize: vertical;
+}
+
 /* ── RATING SYSTEM ─────────────────────────────────────────── */
 .rating-section {
   margin-top: 1.5rem;
@@ -518,7 +534,11 @@ body {
 }
 
 /* ── MODAL FORM ────────────────────────────────────────────── */
-#modalFormOverlay { z-index: 950; }
+.modal-form {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+#modalFormOverlay { z-index: 200; }
 #recipeForm input,
 #recipeForm textarea,
 #recipeForm select {
