@@ -1,15 +1,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg:#eeddcd;
-  --surface:hsl(28, 72%, 79%);
-  --surface2:#e9bc95;
-  --border:#64421f;
-  --accent:#a06c19;
-  --accent2:#cf8205;
-  --text:#63491b;
+  --bg:#0f0700;
+  --surface:#1c0e02;
+  --surface2:#2a1605;
+  --border:#4a2a0a;
+  --accent:#d4870a;
+  --accent2:#f5b041;
+  --text:#f2e8d5;
   --text-muted:#a08060;
   --red:#c0392b;
-  --green:#05a045;
+  --green:#27ae60;
   --radius:12px;
   --shadow:0 8px 40px rgba(0,0,0,.7);
   --font-head: 'Playfair Display', Georgia, serif;
