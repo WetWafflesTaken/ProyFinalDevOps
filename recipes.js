@@ -150,5 +150,148 @@ const RECIPES = [
       "Ajusta sal y sirve inmediatamente.",
       "Opcional: agrega un trozo de aguacate para suavizar el picor."
     ]
+  },
+  {
+    id: 7,
+    title: "Cochinita Pibil Tradicional",
+    category: "carnes",
+    time: "3h 30min",
+    servings: "6-8 porciones",
+    difficulty: "Media",
+    ingredients: [
+      "1 kg de pierna o lomo de cerdo",
+      "100 g de pasta de achiote",
+      "1 taza de jugo de naranja agria",
+      "2 hojas de plátano (asadas)",
+      "1 cdta de orégano seco",
+      "½ cdta de comino",
+      "Sal y pimienta al gusto"
+    ],
+    steps: [
+      "Licúa el achiote con el jugo de naranja agria y las especias.",
+      "Corta la carne en trozos grandes y marínale con la mezcla por al menos 2 horas.",
+      "Forra una olla con las hojas de plátano, vierte la carne y baña con el resto del marinado.",
+      "Cierra bien las hojas y tapa la olla; cocina a fuego bajo hasta que la carne se deshebre fácilmente.",
+      "Sirve con cebolla morada curtida y chile habanero."
+    ]
+  },
+  {
+    id: 8,
+    title: "Chiles en Nogada",
+    category: "carnes",
+    time: "1h 45min",
+    servings: "6 porciones",
+    difficulty: "Difícil",
+    ingredients: [
+      "6 chiles poblanos grandes (asados y limpios)",
+      "500 g de carne molida mixta (res y cerdo)",
+      "100 g de nuez de Castilla (limpia)",
+      "200 g de crema ácida",
+      "150 g de queso de cabra",
+      "1 granada roja",
+      "Frutas picadas (pera, manzana, durazno)",
+      "Perejil picado"
+    ],
+    steps: [
+      "Sofríe la carne con las frutas picadas para hacer el picadillo.",
+      "Licúa la nuez con la crema y el queso para crear la nogada (debe quedar espesa).",
+      "Rellena los chiles limpios con el picadillo caliente.",
+      "Baña los chiles con la nogada a temperatura ambiente.",
+      "Decora con los granos de granada y perejil picado para lucir los colores patrios."
+    ]
+  },
+  {
+    id: 9,
+    title: "Pozole Rojo de Puerco",
+    category: "carnes",
+    time: "2h 30min",
+    servings: "8 porciones",
+    difficulty: "Media",
+    ingredients: [
+      "1 kg de maíz cacahuazintle (precocido)",
+      "1 kg de carne de cerdo (espaldilla y cabeza)",
+      "5 chiles guajillo (hidratados)",
+      "2 chiles ancho (hidratados)",
+      "3 dientes de ajo",
+      "Orégano, lechuga, rabanitos y limón para acompañar"
+    ],
+    steps: [
+      "Pon a cocer el maíz en abundante agua hasta que 'floree'.",
+      "Agrega la carne de cerdo y cocina hasta que esté suave.",
+      "Licúa los chiles con ajo y un poco de agua; cuela y vierte en la olla.",
+      "Deja hervir 20 minutos más para que los sabores se integren.",
+      "Sirve bien caliente con sus guarniciones clásicas y tostadas."
+    ]
+  },
+  {
+    id: 10,
+    title: "Enchiladas Verdes",
+    category: "aves",
+    time: "40min",
+    servings: "4 porciones",
+    difficulty: "Fácil",
+    ingredients: [
+      "12 tortillas de maíz",
+      "2 pechugas de pollo cocidas y deshebradas",
+      "500 g de tomatillo cocido",
+      "3 chiles serranos cocidos",
+      "1 taza de crema ácida",
+      "Queso fresco desmoronado",
+      "Cebolla blanca en aros"
+    ],
+    steps: [
+      "Licúa los tomatillos y chiles con cilantro y un poco de caldo de pollo; hierve la salsa.",
+      "Pasa ligeramente las tortillas por aceite caliente sin que se endurezcan.",
+      "Rellena las tortillas con el pollo y enróllalas.",
+      "Baña generosamente con la salsa verde caliente.",
+      "Decora con crema, queso y aros de cebolla."
+    ]
+  },
+  {
+    id: 11,
+    title: "Aguachile de Camarón",
+    category: "varios",
+    time: "25min",
+    servings: "2-4 porciones",
+    difficulty: "Fácil",
+    ingredients: [
+      "500 g de camarón limpio (corte mariposa)",
+      "1 taza de jugo de limón",
+      "2 chiles serranos",
+      "½ pepino en medias lunas",
+      "½ cebolla morada en pluma",
+      "Cilantro fresco",
+      "Sal de grano"
+    ],
+    steps: [
+      "Acomoda los camarones en un plato extendido y espolvorea sal.",
+      "Licúa el jugo de limón con los chiles y el cilantro.",
+      "Vierte la mezcla sobre los camarones para que se 'curtan' (5-10 min).",
+      "Agrega la cebolla y el pepino.",
+      "Sirve frío con tostadas y rebanadas de aguacate."
+    ]
+  },
+  {
+    id: 12,
+    title: "Mole de Olla",
+    category: "carnes",
+    time: "1h 30min",
+    servings: "6 porciones",
+    difficulty: "Media",
+    ingredients: [
+      "750 g de chambarete de res con hueso",
+      "2 elotes cortados en trozos",
+      "3 xoconostles pelados y sin semillas",
+      "2 calabacitas y 2 zanahorias",
+      "3 chiles pasilla y 2 anchos (limpios y hervidos)",
+      "Rama de epazote"
+    ],
+    steps: [
+      "Cuece la carne con cebolla y ajo en olla express por 40 minutos.",
+      "Licúa los chiles con un poco de caldo y agrégalos a la olla.",
+      "Incorpora los elotes, zanahorias y xoconostle.",
+      "Al final agrega las calabacitas y el epazote para que no se sobrecocinen.",
+      "Sirve con limón y cebolla picada."
+    ]
   }
 ];
