@@ -26,7 +26,6 @@ window.addEventListener('load', () => {
   setupServiceWorker();
   setupOnlineStatus();
 });
-/* ── RENDER GRID ───────────────────────────────────────────── */
 function renderGrid(recipes) {
   grid.innerHTML = '';
   if (!recipes.length) {
@@ -44,8 +43,8 @@ function renderGrid(recipes) {
         <span class="card-cat">${r.category}</span>
         <h2 class="card-title">${r.title}</h2>
         <div class="card-meta">
-          <span>⏱ ${r.time}</span>
-          <span>⭐ ${r.difficulty}</span>
+          <span> ${r.time}</span>
+          <span> ${r.difficulty}</span>
         </div>
         ${isFav ? '<span class="card-fav">❤ Favorita</span>' : ''}
       </div>`;
@@ -84,9 +83,9 @@ function openModal(id) {
   document.getElementById('modalEmoji').textContent        = r.emoji;
   document.getElementById('modalCat').textContent          = r.category;
   document.getElementById('modalTitle').textContent        = r.title;
-  document.getElementById('modalTime').textContent         = `⏱ ${r.time}`;
-  document.getElementById('modalServings').textContent     = `🍽 ${r.servings}`;
-  document.getElementById('modalDiff').textContent         = `⭐ ${r.difficulty}`;
+  document.getElementById('modalTime').textContent         = ` ${r.time}`;
+  document.getElementById('modalServings').textContent     = ` ${r.servings}`;
+  document.getElementById('modalDiff').textContent         = ` ${r.difficulty}`;
 
   const ingList = document.getElementById('modalIngredients');
   ingList.innerHTML = r.ingredients.map(i => `<li>${i}</li>`).join('');
@@ -114,7 +113,7 @@ document.getElementById('favBtn').addEventListener('click', () => {
     showToast('Eliminada de favoritas');
   } else {
     favorites.push(currentRecipeId);
-    showToast('❤ Guardada en favoritas');
+    showToast('Guardada en favoritas');
   }
   localStorage.setItem('don-eladio-favs', JSON.stringify(favorites));
   updateFavBtn();
@@ -124,7 +123,7 @@ document.getElementById('favBtn').addEventListener('click', () => {
 function updateFavBtn() {
   const btn = document.getElementById('favBtn');
   if (favorites.includes(currentRecipeId)) {
-    btn.textContent = '❤ En favoritas';
+    btn.textContent = 'En favoritas';
     btn.classList.add('saved');
   } else {
     btn.textContent = '♡ Guardar favorita';
@@ -151,7 +150,7 @@ function renderFavPanel() {
     const r = RECIPES.find(x => x.id === id);
     if (!r) return;
     const li = document.createElement('li');
-    li.innerHTML = `<span class="fav-emoji">${r.emoji}</span> ${r.title}`;
+    li.innerHTML = `<span class="fav-emoji"></span> ${r.title}`;
     li.addEventListener('click', () => {
       favPanel.classList.remove('open');
       openModal(r.id);
@@ -196,7 +195,7 @@ installBtn.addEventListener('click', () => {
   if (!deferredInstallPrompt) return;
   deferredInstallPrompt.prompt();
   deferredInstallPrompt.userChoice.then(choice => {
-    if (choice.outcome === 'accepted') showToast('📲 App instalada!');
+    if (choice.outcome === 'accepted') showToast(' App instalada!');
     deferredInstallPrompt = null;
     installPrompt.style.display = 'none';
   });
