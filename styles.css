@@ -1,30 +1,21 @@
-/* ============================================================
-   RECETAS DON ELADIO — Styles
-   Aesthetic: Warm Mexican hacienda editorial
-   ============================================================ */
-
-/* ── RESET & TOKENS ────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --bg:        #0f0700;
-  --surface:   #1c0e02;
-  --surface2:  #2a1605;
-  --border:    #4a2a0a;
-  --accent:    #d4870a;
-  --accent2:   #f5b041;
-  --text:      #f2e8d5;
+  --bg:#eeddcd;
+  --surface:#1c0e02;
+  --surface2:#2a1605;
+  --border:#4a2a0a;
+  --accent:#d4870a;
+  --accent2:#f5b041;
+  --text:#f2e8d5;
   --text-muted:#a08060;
-  --red:       #c0392b;
-  --green:     #27ae60;
-  --radius:    12px;
-  --shadow:    0 8px 40px rgba(0,0,0,.7);
+  --red:#c0392b;
+  --green:#27ae60;
+  --radius:12px;
+  --shadow:0 8px 40px rgba(0,0,0,.7);
   --font-head: 'Playfair Display', Georgia, serif;
   --font-body: 'Crimson Pro', Georgia, serif;
 }
-
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--bg);
   color: var(--text);
@@ -34,8 +25,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-
-/* ── LOADER ─────────────────────────────────────────────────── */
 .loader {
   position: fixed; inset: 0;
   background: var(--bg);
@@ -54,8 +43,6 @@ body {
   from { transform: translateY(0) rotate(-5deg); }
   to   { transform: translateY(-16px) rotate(5deg); }
 }
-
-/* ── HEADER ─────────────────────────────────────────────────── */
 .site-header {
   position: relative;
   padding: 3rem 2rem 0;
@@ -111,8 +98,6 @@ body {
   margin-top: .8rem;
   animation: fadeDown 1s .2s ease both;
 }
-
-/* DIVIDER */
 .site-header::after {
   content: '';
   display: block;
@@ -120,8 +105,6 @@ body {
   background: var(--accent);
   margin: 2rem auto 0;
 }
-
-/* NAV */
 .main-nav {
   display: flex;
   justify-content: center;
@@ -148,8 +131,6 @@ body {
   color: #0f0700;
   font-weight: 600;
 }
-
-/* ── SEARCH ─────────────────────────────────────────────────── */
 .search-bar {
   max-width: 480px;
   margin: 2rem auto 0;
@@ -176,8 +157,6 @@ body {
   pointer-events: none;
   font-size: 1rem;
 }
-
-/* ── RECIPE GRID ─────────────────────────────────────────────── */
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -186,8 +165,6 @@ body {
   max-width: 1280px;
   margin: 0 auto;
 }
-
-/* CARD */
 .recipe-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -242,8 +219,6 @@ body {
   font-size: .8rem;
   color: var(--red);
 }
-
-/* ── MODAL ───────────────────────────────────────────────────── */
 .modal-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,.75);
@@ -352,7 +327,6 @@ body {
   line-height: 1.55;
 }
 .modal-steps li::marker { color: var(--accent); font-weight: 700; }
-
 .fav-btn {
   margin-top: 1.5rem;
   background: transparent;
@@ -370,8 +344,6 @@ body {
   border-color: var(--red);
   color: white;
 }
-
-/* ── TOAST ───────────────────────────────────────────────────── */
 .toast {
   position: fixed; bottom: 5rem; left: 50%;
   transform: translateX(-50%) translateY(20px);
@@ -390,8 +362,6 @@ body {
   opacity: 1; visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
-
-/* ── FAB ─────────────────────────────────────────────────────── */
 .fab {
   position: fixed; bottom: 2rem; right: 1.5rem;
   background: var(--accent);
@@ -419,8 +389,6 @@ body {
   display: flex; align-items: center; justify-content: center;
   font-weight: 700;
 }
-
-/* ── FAVORITES PANEL ─────────────────────────────────────────── */
 .fav-panel {
   position: fixed; top: 0; right: -320px;
   width: 310px; height: 100vh;
@@ -460,8 +428,6 @@ body {
 }
 #favList li:hover { color: var(--accent2); }
 #favList li span.fav-emoji { font-size: 1.4rem; }
-
-/* ── OFFLINE BANNER ──────────────────────────────────────────── */
 .offline-banner {
   position: fixed; top: 0; left: 0; right: 0;
   background: #2c1a00;
@@ -475,8 +441,6 @@ body {
   transition: transform .3s ease;
 }
 .offline-banner.show { transform: translateY(0); }
-
-/* ── FOOTER ──────────────────────────────────────────────────── */
 .site-footer {
   text-align: center;
   padding: 2rem 1rem 5rem;
@@ -498,8 +462,6 @@ body {
   transition: opacity .2s;
 }
 #installBtn:hover { opacity: .85; }
-
-/* ── ANIMATIONS ──────────────────────────────────────────────── */
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-18px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -516,16 +478,12 @@ body {
 .recipe-card:nth-child(4)  { animation-delay: .20s; }
 .recipe-card:nth-child(5)  { animation-delay: .25s; }
 .recipe-card:nth-child(6)  { animation-delay: .30s; }
-
-/* ── RESPONSIVE ──────────────────────────────────────────────── */
 @media (max-width: 600px) {
   .recipe-grid { padding: 1.5rem 1rem 4rem; gap: 1rem; }
   .modal-body  { padding: 1rem 1.2rem 1.5rem; }
   .modal-title { font-size: 1.5rem; }
   .fav-panel   { width: 90vw; }
 }
-
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }

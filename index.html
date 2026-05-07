@@ -14,18 +14,14 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- LOADER -->
   <div id="loader" class="loader">
     <div class="loader-pot">🫕</div>
     <p>Calentando la cocina…</p>
   </div>
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="header-bg"></div>
     <div class="header-content">
-      <span class="header-tag">✦ Desde el rancho con amor ✦</span>
+      <span class="header-tag">✦ Orgullosamente Mexicanos ✦</span>
       <h1 class="site-title">Recetas<br><em>Don Eladio</em></h1>
       <p class="site-sub">Cocina tradicional mexicana</p>
     </div>
@@ -36,17 +32,11 @@
       <button class="nav-btn" data-cat="salsas">Salsas</button>
     </nav>
   </header>
-
-  <!-- SEARCH -->
   <div class="search-bar">
     <input type="search" id="searchInput" placeholder="Buscar receta…" />
     <span class="search-icon">🔍</span>
   </div>
-
-  <!-- RECIPE GRID -->
   <main class="recipe-grid" id="recipeGrid"></main>
-
-  <!-- RECIPE MODAL -->
   <div class="modal-overlay" id="modalOverlay">
     <article class="modal" id="modal">
       <button class="modal-close" id="modalClose">✕</button>
@@ -69,16 +59,10 @@
       </div>
     </article>
   </div>
-
-  <!-- TOAST -->
   <div class="toast" id="toast"></div>
-
-  <!-- FAB FAVORITES -->
   <button class="fab" id="fabFav" title="Mis favoritas">❤️
     <span class="fab-badge" id="fabBadge">0</span>
   </button>
-
-  <!-- FAVORITES PANEL -->
   <aside class="fav-panel" id="favPanel">
     <div class="fav-panel-head">
       <h3>Mis Favoritas</h3>
@@ -86,19 +70,15 @@
     </div>
     <ul id="favList"></ul>
   </aside>
-
-  <!-- OFFLINE BANNER -->
   <div class="offline-banner" id="offlineBanner">
     📵 Sin conexión — mostrando recetas guardadas
   </div>
-
   <footer class="site-footer">
     <p>© 2025 Recetas Don Eladio · Hecho con <span style="color:#e74c3c">♥</span> en México</p>
     <p class="pwa-install" id="installPrompt" style="display:none">
       <button id="installBtn">📲 Instalar App</button>
     </p>
   </footer>
-
   <script src="recipes.js"></script>
   <script src="app.js"></script>
 </body>

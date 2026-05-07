@@ -1,13 +1,8 @@
-// ============================================================
-// RECETAS DON ELADIO — App Logic
-// ============================================================
-
 /* ── STATE ─────────────────────────────────────────────────── */
 let currentFilter = 'todas';
 let currentRecipeId = null;
 let favorites = JSON.parse(localStorage.getItem('don-eladio-favs') || '[]');
 let deferredInstallPrompt = null;
-
 /* ── ELEMENTS ──────────────────────────────────────────────── */
 const grid          = document.getElementById('recipeGrid');
 const loader        = document.getElementById('loader');
@@ -23,7 +18,6 @@ const favList       = document.getElementById('favList');
 const offlineBanner = document.getElementById('offlineBanner');
 const installPrompt = document.getElementById('installPrompt');
 const installBtn    = document.getElementById('installBtn');
-
 /* ── INIT ──────────────────────────────────────────────────── */
 window.addEventListener('load', () => {
   setTimeout(() => loader.classList.add('hidden'), 1000);
@@ -32,7 +26,6 @@ window.addEventListener('load', () => {
   setupServiceWorker();
   setupOnlineStatus();
 });
-
 /* ── RENDER GRID ───────────────────────────────────────────── */
 function renderGrid(recipes) {
   grid.innerHTML = '';
@@ -60,7 +53,6 @@ function renderGrid(recipes) {
     grid.appendChild(card);
   });
 }
-
 /* ── FILTER ────────────────────────────────────────────────── */
 document.querySelectorAll('.nav-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -70,10 +62,8 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
     applyFilters();
   });
 });
-
 /* ── SEARCH ────────────────────────────────────────────────── */
 searchInput.addEventListener('input', applyFilters);
-
 function applyFilters() {
   const q = searchInput.value.trim().toLowerCase();
   let results = RECIPES;
@@ -85,7 +75,6 @@ function applyFilters() {
   );
   renderGrid(results);
 }
-
 /* ── MODAL ─────────────────────────────────────────────────── */
 function openModal(id) {
   const r = RECIPES.find(x => x.id === id);
@@ -109,17 +98,14 @@ function openModal(id) {
   modalOverlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function closeModal() {
   modalOverlay.classList.remove('open');
   document.body.style.overflow = '';
   currentRecipeId = null;
 }
-
 modalClose.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
 /* ── FAVORITES ─────────────────────────────────────────────── */
 document.getElementById('favBtn').addEventListener('click', () => {
   if (!currentRecipeId) return;
@@ -135,7 +121,6 @@ document.getElementById('favBtn').addEventListener('click', () => {
   updateFabBadge();
   applyFilters();
 });
-
 function updateFavBtn() {
   const btn = document.getElementById('favBtn');
   if (favorites.includes(currentRecipeId)) {
@@ -146,19 +131,16 @@ function updateFavBtn() {
     btn.classList.remove('saved');
   }
 }
-
 function updateFabBadge() {
   fabBadge.textContent = favorites.length;
   fabBadge.style.display = favorites.length ? 'flex' : 'none';
 }
-
 /* FAB → open panel */
 fabFav.addEventListener('click', () => {
   renderFavPanel();
   favPanel.classList.add('open');
 });
 favPanelClose.addEventListener('click', () => favPanel.classList.remove('open'));
-
 function renderFavPanel() {
   favList.innerHTML = '';
   if (!favorites.length) {
@@ -177,7 +159,6 @@ function renderFavPanel() {
     favList.appendChild(li);
   });
 }
-
 /* ── TOAST ─────────────────────────────────────────────────── */
 let toastTimer;
 function showToast(msg) {
@@ -186,7 +167,6 @@ function showToast(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
 }
-
 /* ── OFFLINE STATUS ─────────────────────────────────────────── */
 function setupOnlineStatus() {
   function update() {
@@ -196,7 +176,6 @@ function setupOnlineStatus() {
   window.addEventListener('offline', update);
   update();
 }
-
 /* ── SERVICE WORKER ─────────────────────────────────────────── */
 function setupServiceWorker() {
   if ('serviceWorker' in navigator) {
@@ -207,14 +186,12 @@ function setupServiceWorker() {
     });
   }
 }
-
 /* ── PWA INSTALL PROMPT ─────────────────────────────────────── */
 window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault();
   deferredInstallPrompt = e;
   installPrompt.style.display = 'block';
 });
-
 installBtn.addEventListener('click', () => {
   if (!deferredInstallPrompt) return;
   deferredInstallPrompt.prompt();
@@ -224,7 +201,6 @@ installBtn.addEventListener('click', () => {
     installPrompt.style.display = 'none';
   });
 });
-
 window.addEventListener('appinstalled', () => {
   showToast('✅ App instalada correctamente');
 });
