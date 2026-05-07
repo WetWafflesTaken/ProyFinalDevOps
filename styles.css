@@ -488,18 +488,50 @@ body {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
-#recipeForm input, #recipeForm textarea, #recipeForm select {
+/* ── RATING SYSTEM ─────────────────────────────────────────── */
+.rating-section {
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+.stars-display {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0.3rem;
+}
+.star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--border);
+  transition: color .15s, transform .15s;
+  line-height: 1;
+  user-select: none;
+}
+.star.active  { color: var(--accent2); }
+.star.hovered { color: var(--accent2); transform: scale(1.2); }
+.star:hover   { transform: scale(1.2); }
+.rating-label {
+  font-size: .85rem;
+  color: var(--text-muted);
+  margin: 0;
+  min-height: 1.2em;
+}
+
+/* ── MODAL FORM ────────────────────────────────────────────── */
+#modalFormOverlay { z-index: 950; }
+#recipeForm input,
+#recipeForm textarea,
+#recipeForm select {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   background: var(--surface2);
   border: 1px solid var(--border);
   color: var(--text);
   border-radius: var(--radius);
   font-family: var(--font-body);
+  font-size: 1rem;
+  box-sizing: border-box;
 }
-
-#recipeForm textarea {
-  height: 100px;
-  resize: vertical;
-}
+#recipeForm textarea { height: 100px; resize: vertical; }
+#recipeForm select   { cursor: pointer; }
