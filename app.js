@@ -200,7 +200,6 @@ recipeForm.addEventListener('submit', e => {
     id:         Date.now(),
     title:      document.getElementById('formTitle').value.trim(),
     category:   document.getElementById('formCategory').value,
-    emoji:      document.getElementById('formEmoji').value || '🍽️',
     time:       document.getElementById('formTime').value || 'Sin especificar',
     servings:   document.getElementById('formServings').value || '—',
     difficulty: document.getElementById('formDifficulty').value,
