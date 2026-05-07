@@ -202,4 +202,42 @@ installBtn.addEventListener('click', () => {
 });
 window.addEventListener('appinstalled', () => {
   showToast('✅ App instalada correctamente');
+  
+});
+const modalForm = document.getElementById('modalFormOverlay');
+const recipeForm = document.getElementById('recipeForm');
+// Abrir/Cerrar
+document.getElementById('fabAdd').addEventListener('click', () => modalForm.classList.add('active'));
+document.getElementById('formClose').addEventListener('click', () => modalForm.classList.remove('active'));
+// Enviar datos
+recipeForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const newRecipe = {
+    title: document.getElementById('formTitle').value,
+    category: document.getElementById('formCategory').value,
+    emoji: document.getElementById('formEmoji').value,
+    time: document.getElementById('formTime').value,
+    ingredients: document.getElementById('formIngredients').value.split(','),
+    steps: document.getElementById('formSteps').value.split('.')
+  };
+
+  try {
+    const response = await fetch('/api/recipes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newRecipe)
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      RECIPES.push(result.data); // Actualizar localmente
+      renderGrid(RECIPES);       // Refrescar vista
+      modalForm.classList.remove('active');
+      recipeForm.reset();
+      showToast('✅ Receta agregada con éxito');
+    }
+  } catch (error) {
+    showToast('❌ Error al guardar');
+  }
 });

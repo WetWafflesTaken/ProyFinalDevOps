@@ -80,5 +80,25 @@
   </footer>
   <script src="recipes.js"></script>
   <script src="app.js"></script>
+  <button class="fab" id="fabAdd" style="bottom: 100px; background: var(--accent2);">➕</button>
+  <div class="modal-overlay" id="modalFormOverlay">
+    <div class="modal-content">
+      <button class="modal-close" id="formClose">✕</button>
+      <h2 class="modal-title">Nueva Receta</h2>
+      <form id="recipeForm">
+        <input type="text" id="formTitle" placeholder="Nombre de la receta" required>
+        <select id="formCategory">
+          <option value="aves">Aves</option>
+          <option value="carnes">Carnes</option>
+          <option value="salsas">Salsas</option>
+        </select>
+        <input type="text" id="formEmoji" placeholder="Emoji (ej: 🌮)">
+        <input type="text" id="formTime" placeholder="Tiempo (ej: 45min)">
+        <textarea id="formIngredients" placeholder="Ingredientes (separados por comas)" required></textarea>
+        <textarea id="formSteps" placeholder="Pasos (separados por puntos)" required></textarea>
+        <button type="submit" class="fav-btn" style="background: var(--green); color: white;">Guardar Receta</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

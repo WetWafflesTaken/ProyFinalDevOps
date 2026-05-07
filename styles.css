@@ -487,3 +487,19 @@ body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+#recipeForm input, #recipeForm textarea, #recipeForm select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+}
+
+#recipeForm textarea {
+  height: 100px;
+  resize: vertical;
+}
