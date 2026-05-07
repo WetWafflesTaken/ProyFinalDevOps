@@ -1,18 +1,17 @@
-const CACHE_NAME = 'don-eladio-v1';
+const CACHE_NAME = 'don-eladio-v2';
 const ASSETS = [
-  './',
   './index.html',
   './styles.css',
   './app.js',
   './recipes.js',
-  './manifest.json',
-  'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Crimson+Pro:wght@300;400;600&display=swap'
+  './manifest.json'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       console.log('[SW] Pre-caching assets');
-      return cache.addAll(ASSETS);
+      // addAll individually so one missing file doesn't kill everything
+      return Promise.allSettled(ASSETS.map(url => cache.add(url)));
     })
   );
   self.skipWaiting();
